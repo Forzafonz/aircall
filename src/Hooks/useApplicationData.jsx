@@ -1,22 +1,29 @@
-import {useEffect, useReducer, useState, useRef} from 'react';
-import reducer, { 
-  SET_APPLICATION_DATA, 
-  SET_PLAYLIST, 
-  SET_PLAYING_MEDIA, 
-  ADD_MEDIA_TO_PLAYLIST, 
-  REMOVE_MEDIA_FROM_PLAYLIST,
-  UPDATE_NEW_PLAYLIST,
-  SET_NEXT_MEDIA,
-  SET_ORDER_FROM_LIKES,
-  ADD_NEW_MESSAGE,
-  SET_SHOW_PLAYLIST,
-  CLEAR_MEDIA 
-} from './reducers';
+import React, { useEffect, useReducer } from 'react';
+import reducer, {
+  SET_APPLICATION_DATA
+} from './reducer.jsx';
 import axios from "axios";
 
-export default function useApplicationData(initial) {
+export default function useApplicationData() {
+
+  
+  // Set the initial state of application
+  const initialState = { 
+    active_tab: "Activity",
+    calls: {}
+  };
+  const [state, dispatch] = useReducer(reducer, initialState);
+  
+  // Retrieve the initial state data about calls
+  // and set it as initial state of application using the reducer.
+  useEffect(() => {
+    axios.get(`https://aircall-job.herokuapp.com/activities`)
+    .then((response) => {
+      dispatch({type: SET_APPLICATION_DATA, values: {calls: response.data}})
+    })
+  }, [])
 
   return { 
-
+    initialState
   }
 }
