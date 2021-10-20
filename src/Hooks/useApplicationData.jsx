@@ -1,6 +1,7 @@
 import React, { useEffect, useReducer } from 'react';
 import reducer, {
-  SET_APPLICATION_DATA
+  SET_APPLICATION_DATA,
+  SET_ACTIVE_TAB
 } from './reducer.jsx';
 import axios from "axios";
 
@@ -24,8 +25,9 @@ export default function useApplicationData() {
   }, [])
   console.log("STATE:", state)
 
-  const setActiveTab = () => {
-    console.log("Set active tab activated!!")
+  //A function to update currently active tab
+  const setActiveTab = (active_tab) => {
+    dispatch({type: SET_ACTIVE_TAB, values: active_tab})
   }
 
   return { 
