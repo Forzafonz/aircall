@@ -1,11 +1,17 @@
 const SET_APPLICATION_DATA = "SET_APPLICATION_DATA";
+const SET_ACTIVE_TAB = "SET_ACTIVE_TAB";
 
 // A reducer function
 const reducer = function (state, action) {
 
   const setInitialState = () => {
-    console.log("THIS IS STATE", state)
-    return {...state, calls: action.values}
+    // Change calls from array to object
+    const calls = {};
+    action.values.forEach(call => {
+      calls[call.id] = {call}
+    })
+
+    return {...state, calls}
   } 
 
   const actions = {
@@ -19,5 +25,6 @@ const reducer = function (state, action) {
 }
 
 export { reducer as default, 
-  SET_APPLICATION_DATA, 
+  SET_APPLICATION_DATA,
+  SET_ACTIVE_TAB 
 }

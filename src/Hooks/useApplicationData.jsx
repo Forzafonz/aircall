@@ -19,11 +19,17 @@ export default function useApplicationData() {
   useEffect(() => {
     axios.get(`https://aircall-job.herokuapp.com/activities`)
     .then((response) => {
-      dispatch({type: SET_APPLICATION_DATA, values: {calls: response.data}})
+      dispatch({type: SET_APPLICATION_DATA, values: response.data})
     })
   }, [])
+  console.log("STATE:", state)
+
+  const setActiveTab = () => {
+    console.log("Set active tab activated!!")
+  }
 
   return { 
-    initialState
+    state,
+    setActiveTab
   }
 }
