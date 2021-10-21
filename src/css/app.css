@@ -13,8 +13,8 @@
   width: 376px;
   height: 666px;
   z-index: 100;
-
-  background: white;
+  background: rgb(126,123,172);
+  background: linear-gradient(180deg, rgba(126,123,172,1) 0%, rgba(117,114,113,1) 35%, rgba(255,255,255,1) 100%);
   border-radius: 3px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, .9);
 }
