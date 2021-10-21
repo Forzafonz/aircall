@@ -11,15 +11,15 @@ const App = () => {
 // using useContext
   const {
     state,
-    setActiveTab
+    setActiveTab,
+    setArchiveStatus
   } = useApplicationData();
 
   return (
     <div className='container'>
-      <UserContext.Provider value = {{state, setActiveTab}}>
+      <UserContext.Provider value = {{state, setActiveTab, setArchiveStatus}}>
         <Header/>
         <MainCallsContainer />
-        <div className="container-view">Some activities should be here</div>
       </UserContext.Provider>
     </div>
   );
