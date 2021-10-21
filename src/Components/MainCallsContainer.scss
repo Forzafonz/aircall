@@ -12,53 +12,75 @@
 	padding:0;
   width: 98%;
 	overflow: hidden;
+	position: relative;
+	margin-top: 11%;
 
 	.container-calls-2 {
 		width: 105%;
     height: 100%;
     padding-right: 5px;
     overflow-y: scroll;
-	}
-
-}
-
-.container--tabs {
-	width: 96%;
-	list-style: none;
-	display: flex;
-	flex-direction: row;
-	
-	.tab {
-		min-height: 2em;
-		max-height: 3em;
-		padding: 1em;
-		box-sizing: border-box;
-		width: 200px;
-		text-align: center;
-		cursor: pointer;
-		border-radius: 99px;
-		margin: 0.3em;
-		background-color: #fff;
-		color: black;
-		font-size: 1rem;
-		white-space:nowrap;
-		padding: 0.3rem 0;
-		transition: background-color 0.25s;
-		
-		&:hover {
-			background-color: rgba(0, 0, 0, 0.25);
-			transition: background-color 0.25s;
-			color: white;
 		}
-	}
-	
-	.tabs--active {
-		background-color: rgba(0,0,0, 0.35);
-		border: 2px solid #2AC420;
-		color: white;
-		pointer-events: none;
-	}
+
+
+		.container-wrap {
+			position: absolute;
+			width: 100%;
+			height: 11%;
+			top:-7.6%;
+			
+
+			.container-absolute{
+				position:fixed;
+				z-index: 2;
+			}
+		
+			.container--tabs {
+				width: 100%;
+				list-style: none;
+				display: flex;
+				top: 11%;
+				flex-direction: row;
+				z-index: 2;
+				
+				.tab {
+					min-height: 2em;
+					max-height: 3em;
+					padding: 1em;
+					box-sizing: border-box;
+					width: 115px;
+					text-align: center;
+					cursor: pointer;
+					border-radius: 99px;
+					margin: 0.3em;
+					background-color: #fff;
+					color: black;
+					font-size: 1rem;
+					white-space:nowrap;
+					padding: 0.3rem 0;
+					transition: background-color 0.25s;
+					
+					&:hover {
+						background-color: rgba(0, 0, 0, 0.25);
+						transition: background-color 0.25s;
+						color: white;
+					}
+				}
+				
+				.tabs--active {
+					background-color: rgba(0,0,0, 0.35);
+					border: 2px solid #2AC420;
+					color: white;
+					pointer-events: none;
+				}
+			}
+		}
+
+
 }
+
+
+
 
 h1 {
 	margin-bottom: 0.5em;
