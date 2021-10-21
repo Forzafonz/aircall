@@ -3,22 +3,13 @@
   src:'https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@800&display=swap'
 }
 
-
-* {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-family: "Gemunu Libre", sans-serif;
-}
-
 .container {
-	max-width: 700px;
-	min-height: 16em;
-	border: 1px solid rgba(0, 0, 0, 0.1);
-	border-radius: 4px;
-	margin: 1em auto 0;
+	// max-width: 700px;
+	// min-height: 16em;
+	font-family: helvetica, sans-serif;
+	margin: 0;
+	padding:0;
+	overflow-y: auto;
 }
 
 .container--tabs {
@@ -35,33 +26,26 @@ body {
 		width: 100%;
 		text-align: center;
 		cursor: pointer;
-		background-color: black;
-		color: white;
+		border-radius: 99px;
+		margin: 0.3em;
+		background-color: #fff;
+		color: black;
+		font-size: 1rem;
 		transition: background-color 0.25s;
-
+		align-self: center;
+		
 		&:hover {
 			background-color: rgba(0, 0, 0, 0.25);
 			transition: background-color 0.25s;
 			color: white;
 		}
 	}
-
+	
 	.tabs--active {
-		background-color: #fff;
-		color: black;
+		background-color: black;
+		color: white;
 		pointer-events: none;
 	}
-}
-
-.content {
-	display: none;
-	padding: 3em;
-
-	text-align: center;
-}
-
-.content--active {
-	display: block;
 }
 
 h1 {
