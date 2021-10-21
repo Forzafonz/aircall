@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import './ListItem.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faPhoneAlt, faChevronDown, faVoicemail, faShareSquare, faUndo, faPhoneSlash, faSignInAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
