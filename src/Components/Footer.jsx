@@ -2,12 +2,12 @@ import React, { useState, useContext } from 'react'
 import './footer.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { UserContext } from '../Hooks/userContext.jsx';
-import {faHome, faUpload, faCog, faAddressBook } from '@fortawesome/free-solid-svg-icons';
+import {faHome, faUpload, faCog, faAddressBook, faArchive } from '@fortawesome/free-solid-svg-icons';
 
 export default function Footer() {
 
   const home = <FontAwesomeIcon icon={ faHome } size="2x"/>
-  const upload = <FontAwesomeIcon icon={ faUpload } size="2x"/>
+  const upload = <FontAwesomeIcon icon={ faArchive } size="2x"/>
   const cog = <FontAwesomeIcon icon={ faCog } size="2x"/>
   const addressBook = <FontAwesomeIcon icon={ faAddressBook } size="2x"/> 
 

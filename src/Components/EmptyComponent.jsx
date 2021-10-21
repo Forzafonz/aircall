@@ -18,7 +18,7 @@ export default function EmptyComponent() {
 
       </div>
       <div className="notification__message">
-        <h2>There are no call activities in this category</h2>
+        <h2>There are no calls in this category</h2>
         
       </div>
     </div>

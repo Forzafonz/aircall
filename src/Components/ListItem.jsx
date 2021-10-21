@@ -38,7 +38,7 @@ export default function ListItem({call_type, created_at, direction, duration, fr
 
   return (
     <>
-    {separator && <div className = "date-separator">Activity on {months[Number(created_at.slice(5,7))]} {created_at.slice(9,10)}, {created_at.slice(0,4)}</div>}
+    {separator && <div className = "date-separator">Activities on {months[Number(created_at.slice(5,7))]} {created_at.slice(9,10)}, {created_at.slice(0,4)}</div>}
     <div className={"card" + (toggled ? " active" : "")}>
 	    <div className={"content" + (toggled ? " active" : "")}>
 		    <div className="imgBx">
