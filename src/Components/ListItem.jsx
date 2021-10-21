@@ -14,7 +14,7 @@ export default function ListItem({call_type, created_at, direction, duration, fr
   const unarchive = <FontAwesomeIcon icon={faUndo} size="3x"/>
   const missedIncoming = <FontAwesomeIcon icon={faSignInAlt} size="2x"/>
   const missedOutcoming = <FontAwesomeIcon icon={faSignOutAlt} size="2x"/>
-  const months = [ "January", "February", "March", "April", "May", "June", 
+  const months = [ "", "January", "February", "March", "April", "May", "June", 
            "July", "August", "September", "October", "November", "December" ];
 
   //A helper function to make duration look good (break it into minutes/seconds)
@@ -38,7 +38,7 @@ export default function ListItem({call_type, created_at, direction, duration, fr
 
   return (
     <>
-    {separator && <div className = "date-separator">Activities on {months[Number(created_at.slice(5,7))]} {created_at.slice(9,10)}, {created_at.slice(0,4)}</div>}
+    {separator && <div className = "date-separator">Activities on {months[Number(created_at.slice(5,7))]} {created_at.slice(8,10)}, {created_at.slice(0,4)}</div>}
     <div className={"card" + (toggled ? " active" : "")}>
 	    <div className={"content" + (toggled ? " active" : "")}>
 		    <div className="imgBx">
