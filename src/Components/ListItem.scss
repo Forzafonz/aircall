@@ -1,0 +1,116 @@
+.card {
+	position: relative;
+	width: auto;
+	height: 6rem;
+	background-color: #fff;
+	box-shadow: 0 50px 50px rgba(0, 0, 0, 0.2);
+	overflow: hidden;
+	transition: height 0.5s ease-in-out;
+  margin: 0.2rem;
+
+  &:hover{
+    background-color: #36b3ff;
+  }
+}
+
+.card.active {
+	height: auto;
+}
+
+.content {
+	display: flex;
+	align-items: center;
+}
+
+.imgBx {
+	width: auto;
+  display: flex;
+  justify-content: center;
+  width: 30%;
+	height: 5rem;
+	overflow: hidden;
+  
+   .icon-main{
+     display: flex;
+     align-items: center;
+     color: green;
+
+    &-missed{
+      @extend .icon-main;
+      color: red;
+    }
+
+    &-voicemail{
+      @extend .icon-main;
+      color: violet;
+    }
+   }
+}
+
+.card .content h2 {
+	margin-left: 15px;
+	font-size: 1.3em;
+	color: #111;
+}
+
+.card .content h2 span {
+	font-size: 0.8em;
+	font-weight: 400;
+	color: #999;
+}
+
+.navigation {
+	position: relative;
+	top: 25px;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	padding: 20px 0;
+}
+
+.navigation li {
+	list-style: none;
+	margin: 15px 0;
+}
+
+.navigation li a {
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	color: #555;
+	font-size: 1.1em;
+	transition: color 0.25s;
+}
+
+.navigation li a:hover {
+	color: #36b3ff;
+}
+
+.navigation li a i {
+	font-size: 1.6em;
+	margin-right: 15px;
+}
+
+.toggle {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 40px;
+	height: 40px;
+	background-color: #36b3ff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	z-index: 5;
+
+}
+
+.archive{
+  @extend .toggle;
+  top:0;
+}
+
+
+
+.card.active .toggle {
+	transform: rotate(180deg);
+}
