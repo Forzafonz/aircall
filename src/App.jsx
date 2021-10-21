@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './Components/Header.jsx';
+import Footer from './Components/Footer.jsx';
 import { UserContext } from './Hooks/userContext.jsx';
 import MainCallsContainer from './Components/MainCallsContainer.jsx';
 import useApplicationData from './Hooks/useApplicationData.jsx';
@@ -18,8 +19,9 @@ const App = () => {
   return (
     <div className='container'>
       <UserContext.Provider value = {{state, setActiveTab, setArchiveStatus}}>
-        <Header/>
+        <Header />
         <MainCallsContainer />
+        <Footer />
       </UserContext.Provider>
     </div>
   );
