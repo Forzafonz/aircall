@@ -9,18 +9,16 @@ export default function MainCallsContainer() {
 
   //an event handler to process the click on tab
   const clickHandler = (event) => {
-    console.log(event.target.id)
     setActiveTab(event.target.id)
   }
-  console.log("RERENDERED")
 
   return (
     <>
     <div className="container">
 	    <ul className="container--tabs">
-	    	<li className="tab tabs--active" onClick = {(event) => clickHandler(event)} id = "All">All calls</li>
-	    	<li className="tab" onClick = {(event) => clickHandler(event)} id = "Active">Active Calls</li>
-	    	<li className="tab" onClick = {(event) => clickHandler(event)} id = "Archived">Archived Calls</li>
+	    	<li className={"tab" + (state.active_tab === "All" ? " tabs--active" : "")} onClick = {(event) => clickHandler(event)} id = "All">All Calls</li>
+	    	<li className={"tab" + (state.active_tab === "Active" ? " tabs--active" : "")} onClick = {(event) => clickHandler(event)} id = "Active">Active Calls</li>
+	    	<li className={"tab" + (state.active_tab === "Archived" ? " tabs--active" : "")} onClick = {(event) => clickHandler(event)} id = "Archived">Archived Calls</li>
 	    </ul>
 
       <ListItems />
