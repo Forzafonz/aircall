@@ -8,9 +8,9 @@
   "license": "",
   "private": false,
   "scripts": {
+    "heroku-prebuild": "npm install --dev",
     "start": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production",
-    "heroku-prebuild": "npm install --dev"
+    "build": "webpack --mode production"
   },
   "dependencies": {
     "@babel/preset-env": "^7.15.8",
