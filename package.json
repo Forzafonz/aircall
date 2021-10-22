@@ -8,7 +8,7 @@
   "license": "",
   "private": false,
   "scripts": {
-    "heroku-prebuild": "npm install --dev",
+    "heroku-prebuild": "yarn install --production=false",
     "start": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production"
   },
