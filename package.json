@@ -10,7 +10,8 @@
   "scripts": {
     "heroku-prebuild": "yarn install --production=false",
     "start": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "heroku-postbuild": "webpack --config webpack.prod.js"
   },
   "dependencies": {
     "@babel/preset-env": "^7.15.8",
