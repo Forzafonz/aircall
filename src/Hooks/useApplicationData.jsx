@@ -30,7 +30,8 @@ export default function useApplicationData() {
     dispatch({type: SET_ACTIVE_TAB, values: active_tab})
   }
 
-  //A function to arhive un-archive calls
+  //A function to arhive and un-archive calls
+  //It sends a post request to the "server" and then dispatches command to the reducer to update global state.
   const setArchiveStatus = (id, status) => {
     axios.post(`https://aircall-job.herokuapp.com/activities/${id}`, {is_archived: status})
     dispatch({type: SET_ARCHIVE_STATUS, values: {id, status}})

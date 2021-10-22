@@ -2,6 +2,7 @@ import React from 'react'
 import './emptycomponent.scss'
 
 export default function EmptyComponent() {
+  // This is an empty component which is showed if there are no active or archived calls
   return (
     <div className="notification">
       <div className="notification__icon">

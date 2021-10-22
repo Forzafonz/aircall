@@ -6,7 +6,7 @@ const SET_ARCHIVE_STATUS = "SET_ARCHIVE_STATUS";
 const reducer = function (state, action) {
 
   const setInitialState = () => {
-    // Change data about calls from array to object (this makes it simplier to search)
+    // Change data about calls from array to object (this makes it simplier to search but harder to sort)
     const calls = {};
     action.values.forEach(call => {
       calls[call.id] = {...call}
@@ -27,11 +27,15 @@ const reducer = function (state, action) {
   const setArchiveStatus = () => {
     const idToUpdate = action.values.id
     const newState = {...state};
+    //copy a specific call to update
     const callToUpdate = {...newState.calls[idToUpdate], is_archived: action.values.status}
+    // copy calls and insert an updated call from the previous line
     const updatedCalls = {...newState.calls, [idToUpdate]: callToUpdate}
     return {...newState, calls: updatedCalls}
   }
 
+  //An object which replaces "if" and "switch" function.
+  // Also contains default action, which, however, should never be trigerred ideally.
   const actions = {
     [SET_ARCHIVE_STATUS]: setArchiveStatus,
     [SET_ACTIVE_TAB]: setActiveTab,

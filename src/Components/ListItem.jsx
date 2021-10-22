@@ -6,6 +6,7 @@ import TimeAgo from 'react-timeago'
 
 export default function ListItem({call_type, created_at, direction, duration, from, id, is_archived, to, via, changeArchiveStatus, separator}) {
   const [toggled, setToggled] = useState(false)
+  //Initiate elements for FontAwesome Icons.
   const phone = <FontAwesomeIcon icon={faPhoneAlt} size="2x"/>
   const phoneMiss = <FontAwesomeIcon icon={faPhoneSlash} size="2x"/>
   const voicemail = <FontAwesomeIcon icon={faVoicemail} size="2x"/>
@@ -14,6 +15,8 @@ export default function ListItem({call_type, created_at, direction, duration, fr
   const unarchive = <FontAwesomeIcon icon={faUndo} size="3x"/>
   const missedIncoming = <FontAwesomeIcon icon={faSignInAlt} size="2x"/>
   const missedOutcoming = <FontAwesomeIcon icon={faSignOutAlt} size="2x"/>
+
+  // Array used to convert numerical month to a string.
   const months = [ "", "January", "February", "March", "April", "May", "June", 
            "July", "August", "September", "October", "November", "December" ];
 
@@ -30,7 +33,7 @@ export default function ListItem({call_type, created_at, direction, duration, fr
     }
     return response;
   }
-
+  // An event handler to archiving/unarchiving calls
   const handleArchiveIconClick = (action) => {
     changeArchiveStatus(id, action === "archive" ? true : false)
   }
@@ -38,10 +41,12 @@ export default function ListItem({call_type, created_at, direction, duration, fr
 
   return (
     <>
+    {/* Check if separator property is true and if so, insert a date line before a call card */}
     {separator && <div className = "date-separator">Activities on {months[Number(created_at.slice(5,7))]} {created_at.slice(8,10)}, {created_at.slice(0,4)}</div>}
     <div className={"card" + (toggled ? " active" : "")}>
 	    <div className={"content" + (toggled ? " active" : "")}>
 		    <div className="imgBx">
+          {/* Logic which determines which icons to show on the card. If it is a voicemail - only one icon is shown. */}
           {call_type === "voicemail" && <div className = {"icon-main-voicemail"}>{voicemail}</div>}
 			    {call_type !== "voicemail" &&  <div className = {"icon-main" + (call_type === "missed" ? "-missed" : "")}>
             {direction === "outbound" ? missedOutcoming : missedIncoming}{call_type === "missed" ? phoneMiss : phone}

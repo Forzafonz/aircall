@@ -18,6 +18,7 @@ const App = () => {
 
   return (
     <div className='container'>
+      {/* Use userContext to pass props to all children of the the main APP */}
       <UserContext.Provider value = {{state, setActiveTab, setArchiveStatus}}>
         <Header />
         <MainCallsContainer />

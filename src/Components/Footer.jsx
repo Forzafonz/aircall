@@ -14,6 +14,7 @@ export default function Footer() {
   const [checked, updateCheckedItem] = useState("item-1")
   const {state, setActiveTab} = useContext(UserContext)
   
+  // This function is used to track which "checkbox" is checked off in the footer and set global state for active tab appropriately.
   const updateChecked = (item) => {
     if (item === "item-1"){
       setActiveTab("All")
@@ -25,6 +26,7 @@ export default function Footer() {
 
   return (
     <footer className="footer">
+      {/* The entire footer is built as an ansemble of radio buttons, which determine which one is selected on click. */}
       <input type="radio" id="item-1" checked = {checked === "item-1" ? true : false} name="menu" onChange = {() => updateChecked("item-1")}/>
         <label htmlFor="item-1">
           <span>
